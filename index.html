@@ -7,431 +7,424 @@
   <meta name="description" content="nox相机是一款跨平台胶片相机 App，19 款真实胶片配方 + 6 款早期 CCD 数码相机模拟，使用 3D GLSL Shader 引擎 + 智能调色。" />
 
   <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="preconnect" href="https://images.unsplash.com" />
   <link href="https://cdn.jsdelivr.net/npm/misans@4.0.0/lib/Normal/MiSans-Regular.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/misans@4.0.0/lib/Normal/MiSans-DemiBold.min.css" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <!-- ─── Navigation ─────────────────────────── -->
   <header class="nav">
     <a class="brand" href="#top" aria-label="nox相机">
       <span class="brand-mark">
-        <svg viewBox="0 0 40 40" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox="0 0 40 40" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="2" y="2" width="36" height="36" rx="8" fill="#000"/>
           <circle cx="20" cy="18" r="9" stroke="#fff" stroke-width="2.5"/>
           <circle cx="20" cy="18" r="4" fill="#fff"/>
           <rect x="14" y="29" width="12" height="5" rx="1.5" fill="#fff" opacity=".7"/>
         </svg>
       </span>
-      <span class="brand-word">nox<span class="brand-dot">·</span>相机</span>
+      <span class="brand-word">nox<span class="brand-dot">.</span>相机</span>
     </a>
     <nav class="nav-links" aria-label="主导航">
       <a href="#films">胶片库</a>
       <a href="#engine">引擎</a>
       <a href="#ai">智能调色</a>
-      <a href="#feel">手感</a>
-      <a href="#price">价格</a>
+      <a href="#roadmap">开发计划</a>
     </nav>
-    <a class="btn btn-primary nav-cta" href="#download">
-      <span>免费下载</span>
-      <span class="arrow">&rarr;</span>
-    </a>
+    <div class="nav-right">
+      <span class="nav-badge">近期内测</span>
+      <a class="btn btn-primary nav-cta" href="#download">
+        免费下载
+      </a>
+    </div>
   </header>
 
   <main id="top">
 
-    <!-- ─── Hero ─────────────────────────── -->
+    <!-- ═════════ HERO ═════════ -->
     <section class="hero">
-      <div class="hero-meta">
-        <span class="dot"></span>
-        <span class="mono">v1.0 &middot; iOS &middot; Android</span>
-      </div>
-
-      <h1 class="hero-title">
-        把每一帧<br />
-        都拍成 <em class="serif-em">大片</em><span class="hero-period">.</span>
-      </h1>
-
-      <p class="hero-sub">
-        19 款真实胶片配方 &middot; 6 款早期 CCD 数码相机模拟<br />
-        3D GLSL Shader 引擎 &middot; 云端 + 本地智能调色
-      </p>
-
-      <div class="hero-cta">
-        <a class="btn btn-black" href="#download">
-          <span>立即下载</span>
-          <span class="arrow">&darr;</span>
-        </a>
-        <a class="btn btn-text" href="#films">
-          <span>查看胶片库</span>
-          <span class="arrow">&rarr;</span>
-        </a>
-      </div>
-
-      <div class="hero-frame" aria-hidden="true">
-        <div class="frame-tag frame-tag-tl">
-          <span class="mono">KODAK PORTRA 400</span>
-          <span class="mono dim">35mm &middot; ISO 400 &middot; f/2.8</span>
-        </div>
-        <div class="frame-tag frame-tag-br">
-          <span class="mono">26 &middot; 06 &middot; 2026</span>
-          <span class="mono dim">FRAME 17 / 36</span>
-        </div>
+      <div class="hero-bg">
         <img
-          class="hero-image"
-          src="https://images.unsplash.com/photo-1514565131-fce0801e5785?w=1600&q=80&auto=format"
-          alt="胶片风格街拍" />
+          src="https://images.unsplash.com/photo-1514565131-fce0801e5785?w=1920&q=85&auto=format"
+          alt=""
+          aria-hidden="true"
+        />
       </div>
-
-      <div class="hero-ticker" aria-hidden="true">
-        <div class="ticker-track">
-          <span>&middot; FUJI PROVIA 100F</span>
-          <span>&middot; KODAK PORTRA 400</span>
-          <span>&middot; ILFORD HP5 PLUS</span>
-          <span>&middot; CINESTILL 800T</span>
-          <span>&middot; POLAROID 600</span>
-          <span>&middot; FUJI VELVIA 50</span>
-          <span>&middot; LOMOCHROME PURPLE</span>
-          <span>&middot; FUJI CLASSIC CHROME</span>
-          <span>&middot; CASIO QV-10</span>
-          <span>&middot; KODAK DC120</span>
-          <span>&middot; FUJI PROVIA 100F</span>
-          <span>&middot; KODAK PORTRA 400</span>
-          <span>&middot; ILFORD HP5 PLUS</span>
-          <span>&middot; CINESTILL 800T</span>
-          <span>&middot; POLAROID 600</span>
-          <span>&middot; FUJI VELVIA 50</span>
-          <span>&middot; LOMOCHROME PURPLE</span>
-          <span>&middot; FUJI CLASSIC CHROME</span>
-          <span>&middot; CASIO QV-10</span>
-          <span>&middot; KODAK DC120</span>
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span class="mono">v1.0 &middot; iOS / Android</span>
+        </div>
+        <h1 class="hero-title">
+          把每一帧<br />都拍成 <em>大片</em><span class="cursor">|</span>
+        </h1>
+        <p class="hero-desc">
+          25 款真实胶片与 CCD 相机模拟 &middot; 3D GLSL Shader 引擎 &middot; 云端 + 本地智能调色
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-black" href="#download">
+            立即下载
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2v9m0 0l-3.5-3.5M8 11l3.5-3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#films">
+            浏览胶片库
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9.5 4.5M13 8l-3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
         </div>
       </div>
+      <div class="hero-frame" aria-hidden="true">
+        <div class="frame-label frame-label-tl mono">KODAK PORTRA 400 &middot; ISO 400</div>
+        <div class="frame-label frame-label-br mono">FRAME 17 / 36</div>
+        <img src="https://images.unsplash.com/photo-1493863641943-9b68992a8d07?w=1200&q=80&auto=format" alt="" />
+      </div>
     </section>
 
-    <!-- ─── 01 / 胶片库 ─────────────────────────── -->
-    <section id="films" class="films">
-      <div class="section-head">
-        <span class="section-num mono">01 /</span>
-        <h2 class="section-title">
-          <em class="serif-em">25</em> 款真实胶片 &amp; CCD<br />
-          从富士到宝丽来
-        </h2>
-        <p class="section-lede">
-          每款胶片都是 5 层 Shader 管线的参数组合：乳剂、色调映射、老化、漏光、畸变。<br />
-          添加一款新胶片，只需要写一份配置，不需要任何 LUT 资源。
-        </p>
-      </div>
-
-      <!-- 横向胶卷条 -->
-      <div class="film-strip" aria-hidden="true">
-        <div class="strip-track">
-          <div class="strip-frame" style="background-image:url('https://images.unsplash.com/photo-1531746020098-6c66095f7f65?w=600&q=80&auto=format')"></div>
-          <div class="strip-frame" style="background-image:url('https://images.unsplash.com/photo-1506905925346-21b95477b5e1?w=600&q=80&auto=format')"></div>
-          <div class="strip-frame" style="background-image:url('https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600&q=80&auto=format')"></div>
-          <div class="strip-frame" style="background-image:url('https://images.unsplash.com/photo-1518834107892-8b85f74d9be8?w=600&q=80&auto=format')"></div>
-          <div class="strip-frame" style="background-image:url('https://images.unsplash.com/photo-1526338923005-0183ab40a04b?w=600&q=80&auto=format')"></div>
-          <div class="strip-frame" style="background-image:url('https://images.unsplash.com/photo-1507003212459-40722c02d8db?w=600&q=80&auto=format')"></div>
-          <div class="strip-frame" style="background-image:url('https://images.unsplash.com/photo-1531746020098-6c66095f7f65?w=600&q=80&auto=format')"></div>
-          <div class="strip-frame" style="background-image:url('https://images.unsplash.com/photo-1506905925346-21b95477b5e1?w=600&q=80&auto=format')"></div>
-          <div class="strip-frame" style="background-image:url('https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600&q=80&auto=format')"></div>
-          <div class="strip-frame" style="background-image:url('https://images.unsplash.com/photo-1518834107892-8b85f74d9be8?w=600&q=80&auto=format')"></div>
-          <div class="strip-frame" style="background-image:url('https://images.unsplash.com/photo-1526338923005-0183ab40a04b?w=600&q=80&auto=format')"></div>
-          <div class="strip-frame" style="background-image:url('https://images.unsplash.com/photo-1507003212459-40722c02d8db?w=600&q=80&auto=format')"></div>
+    <!-- ═════════ FILMS ═════════ -->
+    <section id="films" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-num mono">01</span>
+          <h2 class="section-title">25 款真实胶片与 CCD</h2>
+          <p class="section-desc">每款胶片都是 5 层 Shader 管线的参数组合。添加新胶片只需写一份配置，不需要任何 LUT 资源。</p>
         </div>
-      </div>
 
-      <!-- 胶片网格 -->
-      <div class="film-grid">
-        <div class="film-tile"><span class="tile-tier mono">FREE</span><span class="tile-name">Fuji Provia 100F</span><span class="tile-meta mono">中性 · 风光</span></div>
-        <div class="film-tile"><span class="tile-tier mono">FREE</span><span class="tile-name">Fuji Velvia 50</span><span class="tile-meta mono">高饱和 · 风光</span></div>
-        <div class="film-tile"><span class="tile-tier mono">FREE</span><span class="tile-name">Fuji Astia 100F</span><span class="tile-meta mono">柔和 · 人像</span></div>
-        <div class="film-tile"><span class="tile-tier mono">FREE</span><span class="tile-name">Fuji Classic Chrome</span><span class="tile-meta mono">低饱 · 街拍</span></div>
-        <div class="film-tile"><span class="tile-tier mono">FREE</span><span class="tile-name">Fuji Classic Negative</span><span class="tile-meta mono">复古 · 日常</span></div>
-        <div class="film-tile"><span class="tile-tier mono">FREE</span><span class="tile-name">Fuji Reala Ace</span><span class="tile-meta mono">真实色彩</span></div>
-        <div class="film-tile"><span class="tile-tier mono">FREE</span><span class="tile-name">Fuji ACROS</span><span class="tile-meta mono">黑白 · 银盐</span></div>
-        <div class="film-tile"><span class="tile-tier mono">FREE</span><span class="tile-name">Fuji ETERNA</span><span class="tile-meta mono">电影感</span></div>
-        <div class="film-tile"><span class="tile-tier mono">FREE</span><span class="tile-name">Kodak Portra 400</span><span class="tile-meta mono">人像 · 经典</span></div>
-        <div class="film-tile"><span class="tile-tier mono">FREE</span><span class="tile-name">Ilford HP5 Plus</span><span class="tile-meta mono">黑白 · 街拍</span></div>
-        <div class="film-tile"><span class="tile-tier mono">FREE</span><span class="tile-name">CineStill 800T</span><span class="tile-meta mono">夜景 · 电影</span></div>
-        <div class="film-tile"><span class="tile-tier mono">FREE</span><span class="tile-name">Polaroid 600</span><span class="tile-meta mono">复古 · 拍立得</span></div>
-        <div class="film-tile tile-pro"><span class="tier-label mono">PRO</span><span class="tile-name">Fuji Pro 400H</span><span class="tile-meta mono">婚礼 · 柔和</span></div>
-        <div class="film-tile tile-pro"><span class="tier-label mono">PRO</span><span class="tile-name">Kodak Ektar 100</span><span class="tile-meta mono">鲜艳 · 风光</span></div>
-        <div class="film-tile tile-pro"><span class="tier-label mono">PRO</span><span class="tile-name">LomoChrome Purple</span><span class="tile-meta mono">紫色偏移 · 实验</span></div>
-        <div class="film-tile tile-pro"><span class="tier-label mono">PRO</span><span class="tile-name">Fuji Superia 400</span><span class="tile-meta mono">日光 · 街拍</span></div>
-        <div class="film-tile tile-pro"><span class="tier-label mono">PRO</span><span class="tile-name">Rollei Retro 400S</span><span class="tile-meta mono">暖调 · 复古</span></div>
-        <div class="film-tile tile-pro"><span class="tier-label mono">PRO</span><span class="tile-name">过期 Kodak Gold</span><span class="tile-meta mono">过期 · 强老化</span></div>
-        <div class="film-tile tile-ccd"><span class="tier-label mono ccd">CCD</span><span class="tile-name">Casio QV-10</span><span class="tile-meta mono">1995 · 早期数码相机</span></div>
-        <div class="film-tile tile-ccd"><span class="tier-label mono ccd">CCD</span><span class="tile-name">Kodak DC120</span><span class="tile-meta mono">1997 · 百万像素</span></div>
-        <div class="film-tile tile-ccd"><span class="tier-label mono ccd">CCD</span><span class="tile-name">Olympus C-2000</span><span class="tile-meta mono">1999 · 专业级</span></div>
-        <div class="film-tile tile-ccd"><span class="tier-label mono ccd">CCD</span><span class="tile-name">Sony DSC-P1</span><span class="tile-meta mono">2000 · 卡片机</span></div>
-        <div class="film-tile tile-ccd"><span class="tier-label mono ccd">CCD</span><span class="tile-name">Canon PowerShot A40</span><span class="tile-meta mono">2002 · 入门 CCD</span></div>
-        <div class="film-tile tile-ccd"><span class="tier-label mono ccd">CCD</span><span class="tile-name">Nikon Coolpix 950</span><span class="tile-meta mono">1999 · 旋转镜头</span></div>
-      </div>
-    </section>
-
-    <!-- ─── 02 / 引擎 ─────────────────────────── -->
-    <section id="engine" class="engine">
-      <div class="section-head">
-        <span class="section-num mono">02 /</span>
-        <h2 class="section-title">
-          5 层 <em class="serif-em">GLSL</em> Shader<br />
-          所有胶片特征都是数据
-        </h2>
-        <p class="section-lede">
-          与传统相机 App 不同，nox 不打包任何 LUT 或滤镜资源。<br />
-          所有视觉特征都编码为 5 层 Shader 管线参数，文件体积小、可调、可扩展。
-        </p>
-      </div>
-
-      <div class="pipeline">
-        <div class="layer"><span class="layer-num mono">L1</span><span class="layer-name">乳剂层</span><span class="layer-desc">银盐颗粒 · 颗粒尺寸 · 通道相关</span></div>
-        <div class="layer"><span class="layer-num mono">L2</span><span class="layer-name">色调映射</span><span class="layer-desc">色温 · 色调 · 对比度 · 褪色</span></div>
-        <div class="layer"><span class="layer-num mono">L3</span><span class="layer-name">老化层</span><span class="layer-desc">化学褪色 · 斑驳 · 边缘模糊</span></div>
-        <div class="layer"><span class="layer-num mono">L4</span><span class="layer-name">漏光层</span><span class="layer-desc">3D 漏光 · 方向 · 脉动 · 强度</span></div>
-        <div class="layer"><span class="layer-num mono">L5</span><span class="layer-name">畸变层</span><span class="layer-desc">桶形畸变 · 暗角 · 黑边</span></div>
-      </div>
-
-      <div class="engine-stats">
-        <div class="stat"><span class="stat-num serif-em">25</span><span class="stat-label">款胶片 / CCD 预设</span></div>
-        <div class="stat"><span class="stat-num serif-em">5</span><span class="stat-label">层 Shader 管线</span></div>
-        <div class="stat"><span class="stat-num serif-em">7</span><span class="stat-label">个可调参数</span></div>
-        <div class="stat"><span class="stat-num serif-em">0</span><span class="stat-label">个外部 LUT 资源</span></div>
-      </div>
-    </section>
-
-    <!-- ─── 03 / 智能调色 ─────────────────────────── -->
-    <section id="ai" class="ai">
-      <div class="section-head">
-        <span class="section-num mono">03 /</span>
-        <h2 class="section-title">
-          拍完一张，<br />
-          帮你选好<em class="serif-em">胶片</em>
-        </h2>
-        <p class="section-lede">
-          拍完照片后点一下「智能调色」，云端多模态会分析场景、推荐胶片配方、给出构图裁剪建议。<br />
-          没有网络？本地模型 200ms 内给出合理默认。
-        </p>
-      </div>
-
-      <div class="ai-flow">
-        <div class="ai-step"><span class="ai-step-num mono">01</span><span class="ai-step-icon">&#9679;</span><span class="ai-step-name">拍一张</span><span class="ai-step-desc">用任意胶片预设</span></div>
-        <div class="ai-arrow">&rarr;</div>
-        <div class="ai-step"><span class="ai-step-num mono">02</span><span class="ai-step-icon">&#9733;</span><span class="ai-step-name">智能分析</span><span class="ai-step-desc">云端 1–3s / 本地 &lt;200ms</span></div>
-        <div class="ai-arrow">&rarr;</div>
-        <div class="ai-step"><span class="ai-step-num mono">03</span><span class="ai-step-icon">&#9733;</span><span class="ai-step-name">推荐胶片</span><span class="ai-step-desc">含 7 参数微调</span></div>
-        <div class="ai-arrow">&rarr;</div>
-        <div class="ai-step"><span class="ai-step-num mono">04</span><span class="ai-step-icon">&#9998;</span><span class="ai-step-name">智能裁剪</span><span class="ai-step-desc">主体放黄金点</span></div>
-        <div class="ai-arrow">&rarr;</div>
-        <div class="ai-step ai-step-end"><span class="ai-step-num mono">05</span><span class="ai-step-icon">&#9830;</span><span class="ai-step-name">保存</span><span class="ai-step-desc">存到系统相册</span></div>
-      </div>
-
-      <div class="ai-modes">
-        <div class="ai-mode">
-          <div class="ai-mode-head">
-            <span class="ai-mode-tag mono">CLOUD</span>
-            <h3>云端多模态</h3>
+        <!-- film strip -->
+        <div class="film-strip">
+          <div class="strip-track">
+            <div class="strip-img" style="background-image:url('https://images.unsplash.com/photo-1531746020098-6c66095f7f65?w=500&q=75&auto=format')"></div>
+            <div class="strip-img" style="background-image:url('https://images.unsplash.com/photo-1506905925346-21b95477b5e1?w=500&q=75&auto=format')"></div>
+            <div class="strip-img" style="background-image:url('https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=75&auto=format')"></div>
+            <div class="strip-img" style="background-image:url('https://images.unsplash.com/photo-1518834107892-8b85f74d9be8?w=500&q=75&auto=format')"></div>
+            <div class="strip-img" style="background-image:url('https://images.unsplash.com/photo-1526338923005-0183ab40a04b?w=500&q=75&auto=format')"></div>
+            <div class="strip-img" style="background-image:url('https://images.unsplash.com/photo-1507003212459-40722c02d8db?w=500&q=75&auto=format')"></div>
+            <div class="strip-img" style="background-image:url('https://images.unsplash.com/photo-1531746020098-6c66095f7f65?w=500&q=75&auto=format')"></div>
+            <div class="strip-img" style="background-image:url('https://images.unsplash.com/photo-1506905925346-21b95477b5e1?w=500&q=75&auto=format')"></div>
+            <div class="strip-img" style="background-image:url('https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=75&auto=format')"></div>
+            <div class="strip-img" style="background-image:url('https://images.unsplash.com/photo-1518834107892-8b85f74d9be8?w=500&q=75&auto=format')"></div>
+            <div class="strip-img" style="background-image:url('https://images.unsplash.com/photo-1526338923005-0183ab40a04b?w=500&q=75&auto=format')"></div>
+            <div class="strip-img" style="background-image:url('https://images.unsplash.com/photo-1507003212459-40722c02d8db?w=500&q=75&auto=format')"></div>
           </div>
-          <p>多模态大模型自由发挥：根据场景创意选胶片，微调 7 个参数，给出 30 字以内的中文解释。API Key 不进 App。</p>
-          <ul>
-            <li>12+ 场景类灵活识别</li>
-            <li>创意胶片推荐</li>
-            <li>文字解释 + 构图理由</li>
-            <li>端到端 1–3 秒</li>
-          </ul>
         </div>
-        <div class="ai-mode">
-          <div class="ai-mode-head">
-            <span class="ai-mode-tag mono local">LOCAL</span>
-            <h3>本地模型</h3>
-          </div>
-          <p>5MB int8 量化模型，12 个预定义场景类 → 配方查表。飞行模式、地铁、地下室都能用，隐私照片永远不上传。</p>
-          <ul>
-            <li>12 个场景类查表</li>
-            <li>离线可用</li>
-            <li>照片不上传</li>
-            <li>端到端 &lt; 200ms</li>
-          </ul>
+
+        <!-- film grid -->
+        <div class="film-grid">
+          <div class="film-item"><span class="film-tag mono">FREE</span><strong>Fuji Provia 100F</strong><span>中性 · 风光</span></div>
+          <div class="film-item"><span class="film-tag mono">FREE</span><strong>Fuji Velvia 50</strong><span>高饱和 · 风光</span></div>
+          <div class="film-item"><span class="film-tag mono">FREE</span><strong>Fuji Astia 100F</strong><span>柔和 · 人像</span></div>
+          <div class="film-item"><span class="film-tag mono">FREE</span><strong>Fuji Classic Chrome</strong><span>低饱和 · 街拍</span></div>
+          <div class="film-item"><span class="film-tag mono">FREE</span><strong>Fuji Classic Negative</strong><span>复古 · 日常</span></div>
+          <div class="film-item"><span class="film-tag mono">FREE</span><strong>Fuji ACROS</strong><span>黑白 · 银盐</span></div>
+          <div class="film-item"><span class="film-tag mono">FREE</span><strong>Kodak Portra 400</strong><span>人像 · 经典</span></div>
+          <div class="film-item"><span class="film-tag mono">FREE</span><strong>Ilford HP5 Plus</strong><span>黑白 · 街拍</span></div>
+          <div class="film-item"><span class="film-tag mono">FREE</span><strong>CineStill 800T</strong><span>夜景 · 电影</span></div>
+          <div class="film-item"><span class="film-tag mono">FREE</span><strong>Polaroid 600</strong><span>复古 · 拍立得</span></div>
+          <div class="film-item"><span class="film-tag mono pro">PRO</span><strong>Fuji Pro 400H</strong><span>婚礼 · 柔和</span></div>
+          <div class="film-item"><span class="film-tag mono pro">PRO</span><strong>Kodak Ektar 100</strong><span>鲜艳 · 风光</span></div>
+          <div class="film-item"><span class="film-tag mono pro">PRO</span><strong>LomoChrome Purple</strong><span>紫色偏移 · 实验</span></div>
+          <div class="film-item"><span class="film-tag mono ccd">CCD</span><strong>Casio QV-10</strong><span>1995 · 早期数码</span></div>
+          <div class="film-item"><span class="film-tag mono ccd">CCD</span><strong>Kodak DC120</strong><span>1997 · 百万像素</span></div>
+          <div class="film-item"><span class="film-tag mono ccd">CCD</span><strong>Olympus C-2000</strong><span>1999 · 专业级</span></div>
+          <div class="film-item"><span class="film-tag mono ccd">CCD</span><strong>Sony DSC-P1</strong><span>2000 · 卡片机</span></div>
         </div>
       </div>
     </section>
 
-    <!-- ─── 04 / 手感 ─────────────────────────── -->
-    <section id="feel" class="feel">
-      <div class="section-head">
-        <span class="section-num mono">04 /</span>
-        <h2 class="section-title">
-          不是滤镜 App，<br />
-          是装在手机里的<em class="serif-em">胶片相机</em>
-        </h2>
-        <p class="section-lede">
-          卷片声、对焦环、ISO 拨盘、快门震动、齿轮音效 —<br />
-          每一个动作都来自真实胶片相机的物理反馈。
-        </p>
-      </div>
+    <!-- ═════════ ENGINE ═════════ -->
+    <section id="engine" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-num mono">02</span>
+          <h2 class="section-title">5 层 GLSL Shader 引擎</h2>
+          <p class="section-desc">所有视觉特征都是数据。不打包任何 LUT 或滤镜资源，文件体积小、可调、可扩展。</p>
+        </div>
 
-      <div class="feel-grid">
-        <div class="feel-card"><div class="feel-card-num mono">/01</div><h3>按下快门</h><p>250ms 闪光白屏 + 卷片动效 + 数字滚动 +1，模拟卷片齿轮的咔嗒声。</p></div>
-        <div class="feel-card"><div class="feel-card-num mono">/02</div><h3>长按快门 · B 门</h><p>持续曝光最长 10 秒，屏幕显示进度环，模拟机械快门的真实手感。</p></div>
-        <div class="feel-card"><div class="feel-card-num mono">/03</div><h3>点击对焦</h><p>拖动对焦环，0.5 秒内完成对焦，伴随「咔」的对焦声与缩放反馈。</p></div>
-        <div class="feel-card"><div class="feel-card-num mono">/04</div><h3>双指变焦</h><p>1x–5x 数码变焦平滑过渡，模拟变焦环阻尼。</p></div>
-        <div class="feel-card"><div class="feel-card-num mono">/05</div><h3>ISO 拨盘</h><p>顶部 ISO 数值滚动，真实相机拨盘的触觉体验。</p></div>
-        <div class="feel-card"><div class="feel-card-num mono">/06</div><h3>切换胶片</h><p>左右滑动切换胶片预设，HUD 风格滚轮，齿轮音效跟随。</p></div>
+        <div class="pipeline">
+          <div class="pipe-col">
+            <span class="pipe-num mono">L1</span>
+            <strong>乳剂层</strong>
+            <span>银盐颗粒 · 尺寸 · 通道相关</span>
+          </div>
+          <div class="pipe-col">
+            <span class="pipe-num mono">L2</span>
+            <strong>色调映射</strong>
+            <span>色温 · 对比度 · 褪色</span>
+          </div>
+          <div class="pipe-col">
+            <span class="pipe-num mono">L3</span>
+            <strong>老化层</strong>
+            <span>化学褪色 · 斑驳 · 边缘模糊</span>
+          </div>
+          <div class="pipe-col">
+            <span class="pipe-num mono">L4</span>
+            <strong>漏光层</strong>
+            <span>3D 方向 · 脉动 · 强度</span>
+          </div>
+          <div class="pipe-col">
+            <span class="pipe-num mono">L5</span>
+            <strong>畸变层</strong>
+            <span>桶形畸变 · 暗角 · 黑边</span>
+          </div>
+        </div>
+
+        <div class="stats-row">
+          <div class="stat"><em data-count="25">0</em><span>款胶片预设</span></div>
+          <div class="stat"><em data-count="5">0</em><span>层 Shader 管线</span></div>
+          <div class="stat"><em data-count="7">0</em><span>个可调参数</span></div>
+          <div class="stat"><em data-count="0">0</em><span>个外部 LUT</span></div>
+        </div>
       </div>
     </section>
 
-    <!-- ─── 05 / 构图 ─────────────────────────── -->
-    <section class="composition">
-      <div class="section-head">
-        <span class="section-num mono">05 /</span>
-        <h2 class="section-title">
-          九宫格 + 黄金分割<br />
-          + <em class="serif-em">智能</em>裁剪
-        </h2>
-        <p class="section-lede">
-          取景时辅助构图，拍照后分析主体位置，给出 4 角可调的裁剪建议。
-        </p>
-      </div>
+    <!-- ═════════ AI ═════════ -->
+    <section id="ai" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-num mono">03</span>
+          <h2 class="section-title">智能调色</h2>
+          <p class="section-desc">拍完照片后点一下「智能调色」，云端多模态分析场景、推荐胶片配方、给出构图裁剪建议。没有网络？本地模型 200ms 内给出合理默认。</p>
+        </div>
 
-      <div class="comp-demo">
-        <div class="comp-image">
-          <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=80&auto=format" alt="构图示例" />
-          <div class="comp-overlay">
-            <div class="rule-h"></div>
-            <div class="rule-v"></div>
-            <div class="golden-spiral"></div>
+        <div class="ai-flow">
+          <div class="flow-step"><span class="flow-num mono">01</span><strong>拍摄</strong><span>任意胶片预设</span></div>
+          <div class="flow-arrow">&rarr;</div>
+          <div class="flow-step"><span class="flow-num mono">02</span><strong>分析</strong><span>云端 1–3s / 本地 &lt;200ms</span></div>
+          <div class="flow-arrow">&rarr;</div>
+          <div class="flow-step"><span class="flow-num mono">03</span><strong>推荐</strong><span>含 7 参数微调</span></div>
+          <div class="flow-arrow">&rarr;</div>
+          <div class="flow-step"><span class="flow-num mono">04</span><strong>裁剪</strong><span>主体放黄金点</span></div>
+          <div class="flow-arrow">&rarr;</div>
+          <div class="flow-step flow-end"><span class="flow-num mono">05</span><strong>保存</strong><span>存到系统相册</span></div>
+        </div>
+
+        <div class="ai-cards">
+          <div class="ai-card">
+            <div class="ai-card-head">
+              <span class="ai-tag mono">CLOUD</span>
+              <h3>云端多模态</h3>
+            </div>
+            <p>根据场景创意选胶片，微调 7 个参数，给出中文解释。API Key 不进 App。</p>
+            <ul>
+              <li>12+ 场景类灵活识别</li>
+              <li>创意胶片推荐</li>
+              <li>文字解释 + 构图理由</li>
+              <li>端到端 1–3 秒</li>
+            </ul>
           </div>
-          <div class="crop-suggestion">
-            <div class="crop-corners">
-              <span class="corner tl"></span>
-              <span class="corner tr"></span>
-              <span class="corner bl"></span>
-              <span class="corner br"></span>
+          <div class="ai-card">
+            <div class="ai-card-head">
+              <span class="ai-tag local mono">LOCAL</span>
+              <h3>本地模型</h3>
+            </div>
+            <p>5MB int8 量化模型，12 个预定义场景类查表。飞行模式、地铁都能用，隐私照片永远不上传。</p>
+            <ul>
+              <li>12 个场景类查表</li>
+              <li>离线可用</li>
+              <li>照片不上传</li>
+              <li>端到端 &lt; 200ms</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ FEEL ═════════ -->
+    <section id="feel" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-num mono">04</span>
+          <h2 class="section-title">装在手机里的胶片相机</h2>
+          <p class="section-desc">卷片声、对焦环、ISO 拨盘、快门震动 — 每一个动作都来自真实胶片相机的物理反馈。</p>
+        </div>
+
+        <div class="feel-grid">
+          <div class="feel-item"><span class="feel-num mono">01</span><h3>按下快门</h3><p>250ms 闪光白屏 + 卷片动效 + 数字滚动 +1，模拟卷片齿轮的咔嗒声。</p></div>
+          <div class="feel-item"><span class="feel-num mono">02</span><h3>B 门长曝</h3><p>持续曝光最长 10 秒，屏幕显示进度环，模拟机械快门的真实手感。</p></div>
+          <div class="feel-item"><span class="feel-num mono">03</span><h3>点击对焦</h3><p>拖动对焦环，0.5 秒内完成对焦，伴随「咔」的对焦声与缩放反馈。</p></div>
+          <div class="feel-item"><span class="feel-num mono">04</span><h3>双指变焦</h3><p>1x–5x 数码变焦平滑过渡，模拟变焦环阻尼。</p></div>
+          <div class="feel-item"><span class="feel-num mono">05</span><h3>ISO 拨盘</h3><p>顶部 ISO 数值滚动，真实相机拨盘的触觉体验。</p></div>
+          <div class="feel-item"><span class="feel-num mono">06</span><h3>切换胶片</h3><p>左右滑动切换胶片预设，HUD 风格滚轮，齿轮音效跟随。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ ROADMAP ═════════ -->
+    <section id="roadmap" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-num mono">05</span>
+          <h2 class="section-title">开发计划</h2>
+          <p class="section-desc">开源项目，从设计文档到代码实现完全透明。</p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item active">
+            <div class="timeline-marker">
+              <span class="marker-dot"></span>
+              <span class="marker-line"></span>
+            </div>
+            <div class="timeline-body">
+              <span class="timeline-status mono">NOW</span>
+              <h3>内测阶段</h3>
+              <p>即将开启首轮内测，邀请核心用户参与测试与反馈收集。</p>
+              <span class="timeline-time mono">2026 年 6 月下旬</span>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <span class="marker-dot"></span>
+              <span class="marker-line"></span>
+            </div>
+            <div class="timeline-body">
+              <span class="timeline-status mono up">NEXT</span>
+              <h3>正式上线</h3>
+              <p>iOS App Store 与 Google Play 同步发布，全平台可用。</p>
+              <span class="timeline-time mono">2026 年 7 月</span>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <span class="marker-dot"></span>
+            </div>
+            <div class="timeline-body">
+              <span class="timeline-status mono">LATER</span>
+              <h3>持续迭代</h3>
+              <p>新胶片配方、CCD 相机模拟、用户社区功能陆续上线。</p>
+              <span class="timeline-time mono">2026 年 Q3 起</span>
             </div>
           </div>
         </div>
-        <div class="comp-side">
-          <h3>取景时</h3>
-          <p>半透明九宫格 / 黄金分割螺旋切换叠加，单击屏幕可手动移动构图辅助框。</p>
-          <h3>拍后</h3>
-          <p>点「智能裁剪」→ 云端返回裁剪建议 → 周边半透明遮罩 + 解释（如「把人脸放在右上三分点」）。</p>
-          <h3>微调</h3>
-          <p>4 角可调，重置 / 接受 / 跳过 — 你永远有最终决定权。</p>
+
+        <div class="links-grid">
+          <a class="link-card" href="https://github.com/zhangxuyang097-maker/nox" target="_blank" rel="noopener noreferrer">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            <div>
+              <strong>GitHub 仓库</strong>
+              <span>完整源码、Issue 追踪、PR 贡献</span>
+            </div>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="link-card" href="https://github.com/zhangxuyang097-maker/nox/blob/main/docs/superpowers/specs/" target="_blank" rel="noopener noreferrer">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            <div>
+              <strong>设计文档</strong>
+              <span>产品规格、技术架构、交互规范</span>
+            </div>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="link-card" href="https://github.com/zhangxuyang097-maker/nox/blob/main/docs/superpowers/plans/" target="_blank" rel="noopener noreferrer">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <div>
+              <strong>实施计划</strong>
+              <span>开发里程碑、任务拆解、进度追踪</span>
+            </div>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- ─── 06 / 价格 ─────────────────────────── -->
-    <section id="price" class="price">
-      <div class="section-head">
-        <span class="section-num mono">06 /</span>
-        <h2 class="section-title">
-          三种方案，<br />
-          按你的<em class="serif-em">节奏</em>拍
-        </h2>
-      </div>
-
-      <div class="tiers">
-        <div class="tier">
-          <div class="tier-head">
-            <span class="tier-name">Free</span>
-            <span class="tier-price serif-em">&yen;0</span>
-          </div>
-          <p class="tier-desc">完整相机 + 13 款基础胶片 + 本地调色</p>
-          <ul>
-            <li>13 款基础胶片预设</li>
-            <li>完整相机交互</li>
-            <li>本地智能调色</li>
-            <li>无限拍照 · 无限保存</li>
-          </ul>
+    <!-- ═════════ PRICE ═════════ -->
+    <section id="price" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-num mono">06</span>
+          <h2 class="section-title">价格方案</h2>
+          <p class="section-desc">永久买断，无订阅制。</p>
         </div>
 
-        <div class="tier tier-pro">
-          <span class="tier-badge mono">POPULAR</span>
-          <div class="tier-head">
-            <span class="tier-name">Pro</span>
-            <span class="tier-price serif-em">&yen;49<small>买断</small></span>
+        <div class="pricing">
+          <div class="price-card">
+            <span class="price-name mono">Free</span>
+            <span class="price-amount">&yen;0</span>
+            <p>完整相机 + 13 款基础胶片 + 本地调色</p>
+            <ul>
+              <li>13 款基础胶片预设</li>
+              <li>完整相机交互</li>
+              <li>本地智能调色</li>
+              <li>无限拍照 · 无限保存</li>
+            </ul>
           </div>
-          <p class="tier-desc">解锁所有胶片 + 云端智能调色</p>
-          <ul>
-            <li>25 款胶片 + CCD 预设</li>
-            <li>云端多模态智能调色</li>
-            <li>智能构图裁剪</li>
-            <li>优先技术支持</li>
-            <li><strong>可补差价 &yen;50 升级到 ProMax</strong></li>
-          </ul>
-        </div>
-
-        <div class="tier tier-promax">
-          <span class="tier-badge mono promax">PROMAX</span>
-          <div class="tier-head">
-            <span class="tier-name">ProMax</span>
-            <span class="tier-price serif-em">&yen;99<small>买断</small></span>
+          <div class="price-card featured">
+            <span class="price-badge mono">POPULAR</span>
+            <span class="price-name mono">Pro</span>
+            <span class="price-amount">&yen;49<small>/买断</small></span>
+            <p>解锁全部胶片 + 云端智能调色</p>
+            <ul>
+              <li>25 款胶片 + CCD 预设</li>
+              <li>云端多模态智能调色</li>
+              <li>智能构图裁剪</li>
+              <li>优先技术支持</li>
+              <li><strong>可补差价 &yen;50 升级 ProMax</strong></li>
+            </ul>
           </div>
-          <p class="tier-desc">全部功能 + 未来所有新胶片</p>
-          <ul>
-            <li>Pro 全部功能</li>
-            <li>6 款 ProMax 独占胶片</li>
-            <li>6 款 CCD 数码相机模拟</li>
-            <li>新胶片永久免费</li>
-          </ul>
+          <div class="price-card">
+            <span class="price-name mono">ProMax</span>
+            <span class="price-amount">&yen;99<small>/买断</small></span>
+            <p>全部功能 + 未来所有新胶片</p>
+            <ul>
+              <li>Pro 全部功能</li>
+              <li>6 款 ProMax 独占胶片</li>
+              <li>6 款 CCD 数码相机模拟</li>
+              <li>新胶片永久免费</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ─── Download / CTA ─────────────────────────── -->
-    <section id="download" class="download">
-      <h2 class="dl-title">
-        今天开始<br />
-        把<em class="serif-em">世界</em>拍成大片
-      </h2>
-      <p class="dl-sub">iOS 16+ / Android 8+ &middot; 永久买断，无订阅</p>
-
-      <div class="dl-buttons">
-        <a class="store-btn" href="#" aria-label="App Store">
-          <span class="store-mark">&darr;</span>
-          <span class="store-text">
-            <span class="store-pre">Download on</span>
-            <span class="store-name">App Store</span>
-          </span>
-        </a>
-        <a class="store-btn" href="#" aria-label="Google Play">
-          <span class="store-mark">&#9654;</span>
-          <span class="store-text">
-            <span class="store-pre">Get it on</span>
-            <span class="store-name">Google Play</span>
-          </span>
-        </a>
+    <!-- ═════════ CTA ═════════ -->
+    <section id="download" class="cta">
+      <div class="container">
+        <h2 class="cta-title">今天开始，把世界拍成大片</h2>
+        <p class="cta-sub">iOS 16+ / Android 8+ &middot; 永久买断，无订阅</p>
+        <div class="cta-buttons">
+          <a class="store-btn" href="#" aria-label="App Store">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.45-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.82 7.31c1.29-.06 2.15.72 2.92.72s2.38-1.03 4.07-.87c1.57.13 2.69.77 3.43 1.94-3.1 1.87-2.52 6 .23 7.27-.36.97-1.04 2.01-1.99 3zM15.44 4.89c.78-.96 1.32-2.28 1.16-3.62-1.15.05-2.53.79-3.35 1.81-.74.91-1.35 2.37-1.12 3.63 1.26.1 2.54-.71 3.31-1.82z"/></svg>
+            <div>
+              <span class="store-pre">Download on the</span>
+              <span class="store-name">App Store</span>
+            </div>
+          </a>
+          <a class="store-btn" href="#" aria-label="Google Play">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.921V2.735a1 1 0 01.609-.921zm9.97 8.876L4.751 2.378l13.85 8.312-5.022 0zm5.022 2.52L4.751 21.622l8.828-8.312 5.022 0zm1.309-1.439a.75.75 0 010-1.339l2.367-1.421a.75.75 0 01.986.203v3.775a.75.75 0 01-.986.203l-2.367-1.421z"/></svg>
+            <div>
+              <span class="store-pre">GET IT ON</span>
+              <span class="store-name">Google Play</span>
+            </div>
+          </a>
+        </div>
+        <p class="cta-note mono">即将上线 &middot; 近期开启内测</p>
       </div>
-
-      <p class="dl-foot mono">即将上线 &middot; 留下你的邮箱第一时间收到通知</p>
     </section>
+
   </main>
 
   <!-- ─── Footer ─────────────────────────── -->
   <footer class="footer">
-    <div class="foot-left">
-      <span class="foot-brand">nox<span>.</span>相机</span>
-      <p class="foot-tag">把每一帧都拍成大片</p>
+    <div class="container footer-inner">
+      <div class="foot-branding">
+        <span class="foot-logo">nox<span>.</span>相机</span>
+        <p>把每一帧都拍成大片</p>
+      </div>
+      <div class="foot-col">
+        <span class="foot-label mono">项目</span>
+        <a href="https://github.com/zhangxuyang097-maker/nox" target="_blank" rel="noopener noreferrer">GitHub 仓库</a>
+        <a href="https://github.com/zhangxuyang097-maker/nox/blob/main/docs/superpowers/specs/" target="_blank" rel="noopener noreferrer">设计文档</a>
+        <a href="https://github.com/zhangxuyang097-maker/nox/blob/main/docs/superpowers/plans/" target="_blank" rel="noopener noreferrer">实施计划</a>
+      </div>
+      <div class="foot-col">
+        <span class="foot-label mono">联系</span>
+        <a href="mailto:support@noxcamera.app">support@noxcamera.app</a>
+        <a href="#">Twitter / X</a>
+        <a href="#">Instagram</a>
+      </div>
     </div>
-    <div class="foot-mid">
-      <span class="foot-label mono">PROJECT</span>
-      <ul>
-        <li>GitHub 仓库</li>
-        <li>设计文档</li>
-        <li>实施计划</li>
-      </ul>
+    <div class="container foot-bottom">
+      <span>&copy; 2026 NOX CAMERA &middot; MADE WITH 35MM LOVE</span>
     </div>
-    <div class="foot-right">
-      <span class="foot-label mono">CONTACT</span>
-      <ul>
-        <li>support@noxcamera.app</li>
-        <li>Twitter / X</li>
-        <li>Instagram</li>
-      </ul>
-    </div>
-    <div class="foot-bottom mono">&copy; 2026 NOX CAMERA &middot; MADE WITH 35MM LOVE</div>
   </footer>
 
   <script src="script.js"></script>

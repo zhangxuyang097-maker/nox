@@ -1,96 +1,91 @@
-/* ═══════════════════════════════════════
-   nox相机 — interactions (B&W)
-   ═══════════════════════════════════════ */
+/* ═══════════════════════════
+   nox相机 — interactions
+   ═══════════════════════════ */
 
 (() => {
-  // ── 1. scroll-reveal ─────────────────────────
-  const reveals = [
-    ".section-head", ".film-strip", ".film-grid",
-    ".pipeline", ".engine-stats",
-    ".ai-flow", ".ai-modes",
-    ".feel-grid", ".comp-demo", ".tiers",
-    ".download", ".footer"
-  ].flatMap(sel => Array.from(document.querySelectorAll(sel)));
+  'use strict';
 
-  reveals.forEach(el => el.classList.add("reveal"));
+  // ── 1. scroll reveal ────────────────────
+  const sections = document.querySelectorAll(
+    '.section-header, .film-strip, .film-grid, .pipeline, .stats-row, .ai-flow, .ai-cards, .feel-grid, .timeline, .links-grid, .pricing, .cta, .footer'
+  );
+  sections.forEach(el => el.classList.add('reveal'));
 
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
       if (e.isIntersecting) {
-        e.target.classList.add("in");
-        io.unobserve(e.target);
+        e.target.classList.add('in');
+        observer.unobserve(e.target);
       }
     });
-  }, { threshold: 0.12, rootMargin: "0px 0px -60px 0px" });
+  }, { threshold: 0.1, rootMargin: '-40px 0px' });
 
-  reveals.forEach((el, i) => {
-    el.style.transitionDelay = `${Math.min(i * 40, 400)}ms`;
-    io.observe(el);
+  sections.forEach((el, i) => {
+    el.style.transitionDelay = `${Math.min(i * 50, 400)}ms`;
+    observer.observe(el);
   });
 
-  // ── 2. film strip — pause on hover ───────────
-  const strip = document.querySelector(".strip-track");
-  const stripContainer = document.querySelector(".film-strip");
+  // ── 2. film strip pause on hover ──────────
+  const strip = document.querySelector('.strip-track');
+  const stripContainer = document.querySelector('.film-strip');
   if (strip && stripContainer) {
-    stripContainer.addEventListener("mouseenter", () => {
-      strip.style.animationPlayState = "paused";
-    });
-    stripContainer.addEventListener("mouseleave", () => {
-      strip.style.animationPlayState = "running";
-    });
+    stripContainer.addEventListener('mouseenter', () => { strip.style.animationPlayState = 'paused'; });
+    stripContainer.addEventListener('mouseleave', () => { strip.style.animationPlayState = 'running'; });
   }
 
-  // ── 3. ticker — duplicate for seamless loop ─
-  const ticker = document.querySelector(".ticker-track");
-  if (ticker) {
-    const clone = ticker.cloneNode(true);
-    clone.setAttribute("aria-hidden", "true");
-    ticker.parentNode.appendChild(clone);
+  // ── 3. duplicate ticker for seamless loop ──
+  const track = document.querySelector('.strip-track');
+  if (track) {
+    track.insertAdjacentHTML('beforeend', track.innerHTML);
   }
 
-  // ── 4. film tile hover ──────────────────────
-  document.querySelectorAll(".film-tile").forEach(tile => {
-    tile.addEventListener("mouseenter", () => {
-      tile.style.boxShadow = "inset 0 0 0 1px rgba(0,0,0,0.2)";
+  // ── 4. stat counter animation ─────────────
+  const statEls = document.querySelectorAll('[data-count]');
+  const countObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const target = parseInt(e.target.dataset.count, 10);
+      if (isNaN(target)) return;
+      let current = 0;
+      const step = Math.max(1, Math.ceil(target / 40));
+      const timer = setInterval(() => {
+        current += step;
+        if (current >= target) { current = target; clearInterval(timer); }
+        e.target.textContent = current;
+      }, 25);
+      countObserver.unobserve(e.target);
     });
-    tile.addEventListener("mouseleave", () => {
-      tile.style.boxShadow = "none";
-    });
-  });
+  }, { threshold: 0.5 });
+  statEls.forEach(el => countObserver.observe(el));
 
-  // ── 5. parallax on hero image (subtle) ───────
-  const heroImg = document.querySelector(".hero-image");
+  // ── 5. hero parallax ─────────────────────
+  const heroImg = document.querySelector('.hero-bg img');
   if (heroImg) {
-    window.addEventListener("scroll", () => {
+    window.addEventListener('scroll', () => {
       const y = window.scrollY;
       if (y < window.innerHeight) {
-        heroImg.style.transform = `translateY(${y * 0.08}px) scale(1.01)`;
+        heroImg.style.transform = `translateY(${y * 0.15}px) scale(1.05)`;
       }
     }, { passive: true });
   }
 
-  // ── 6. smooth-scroll for nav links ───────────
+  // ── 6. smooth scroll for anchor links ────
   document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener("click", e => {
-      const id = link.getAttribute("href");
-      if (id.length > 1) {
-        const target = document.querySelector(id);
-        if (target) {
-          e.preventDefault();
-          const offset = 70;
-          const y = target.getBoundingClientRect().top + window.scrollY - offset;
-          window.scrollTo({ top: y, behavior: "smooth" });
-        }
-      }
+    link.addEventListener('click', (ev) => {
+      const id = link.getAttribute('href');
+      if (!id || id === '#') return;
+      const target = document.querySelector(id);
+      if (!target) return;
+      ev.preventDefault();
+      const offset = 80;
+      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
     });
   });
 
-  // ── 7. fade in body on load ─────────────────
-  document.body.style.opacity = "0";
-  document.body.style.transition = "opacity 0.6s ease";
-  requestAnimationFrame(() => {
-    requestAnimationFrame(() => {
-      document.body.style.opacity = "1";
-    });
-  });
+  // ── 7. fade in on load ───────────────────
+  document.body.style.opacity = '0';
+  document.body.style.transition = 'opacity .5s ease';
+  requestAnimationFrame(() => requestAnimationFrame(() => { document.body.style.opacity = '1'; }));
+
 })();
