@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>nox相机 — 把每一帧都拍成大片</title>
-  <meta name="description" content="nox相机是一款跨平台胶片相机 App，19 款真实胶片配方 + 6 款早期 CCD 数码相机模拟，使用 3D GLSL Shader 引擎 + 智能调色。" />
+  <meta name="description" content="nox相机是一款跨平台胶片相机 App，25 款真实胶片配方 + 6 款早期 CCD 数码相机模拟，使用 3D GLSL Shader 引擎 + 智能调色。" />
 
   <link rel="preconnect" href="https://cdn.jsdelivr.net" />
   <link rel="preconnect" href="https://images.unsplash.com" />
@@ -15,11 +15,11 @@
 </head>
 <body>
 
-  <!-- ─── Navigation ─────────────────────────── -->
-  <header class="nav">
+  <!-- ═══════ Navigation ═══════ -->
+  <header class="nav" id="nav">
     <a class="brand" href="#top" aria-label="nox相机">
       <span class="brand-mark">
-        <svg viewBox="0 0 40 40" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox="0 0 40 40" width="26" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="2" y="2" width="36" height="36" rx="8" fill="#000"/>
           <circle cx="20" cy="18" r="9" stroke="#fff" stroke-width="2.5"/>
           <circle cx="20" cy="18" r="4" fill="#fff"/>
@@ -29,22 +29,30 @@
       <span class="brand-word">nox<span class="brand-dot">.</span>相机</span>
     </a>
     <nav class="nav-links" aria-label="主导航">
-      <a href="#films">胶片库</a>
-      <a href="#engine">引擎</a>
-      <a href="#ai">智能调色</a>
-      <a href="#roadmap">开发计划</a>
+      <a href="#films" data-link="films">胶片库</a>
+      <a href="#engine" data-link="engine">引擎</a>
+      <a href="#ai" data-link="ai">智能调色</a>
+      <a href="#roadmap" data-link="roadmap">开发计划</a>
+      <a href="#price" data-link="price">价格</a>
     </nav>
     <div class="nav-right">
-      <span class="nav-badge">近期内测</span>
-      <a class="btn btn-primary nav-cta" href="#download">
-        免费下载
-      </a>
+      <span class="nav-badge">
+        <span class="badge-dot"></span>
+        近期内测
+      </span>
+      <a class="btn btn-primary nav-cta" href="#download">免费下载</a>
     </div>
   </header>
 
+  <!-- ═══════ Floating Download (scroll) ═══════ -->
+  <a class="floating-cta" href="#download" id="floating-cta" aria-label="下载 nox相机">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2v9m0 0l-3.5-3.5M8 11l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>免费下载</span>
+  </a>
+
   <main id="top">
 
-    <!-- ═════════ HERO ═════════ -->
+    <!-- ═══════ HERO ═══════ -->
     <section class="hero">
       <div class="hero-bg">
         <img
@@ -52,46 +60,96 @@
           alt=""
           aria-hidden="true"
         />
+        <div class="hero-grain" aria-hidden="true"></div>
       </div>
-      <div class="hero-content">
-        <div class="hero-badge">
-          <span class="badge-dot"></span>
-          <span class="mono">v1.0 &middot; iOS / Android</span>
+      <div class="hero-bg-fade" aria-hidden="true"></div>
+
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+            <span class="mono">v1.0 &middot; iOS / Android</span>
+          </div>
+          <h1 class="hero-title">
+            把每一帧<br />都拍成 <em class="hero-em">大片</em><span class="cursor">|</span>
+          </h1>
+          <p class="hero-desc">
+            25 款真实胶片与 CCD 相机模拟 &middot; 3D GLSL Shader 引擎 &middot; 云端 + 本地智能调色
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg" href="#download">
+              立即下载
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2v9m0 0l-3.5-3.5M8 11l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="btn btn-ghost btn-lg" href="#films">
+              浏览胶片库
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9.5 4.5M13 8l-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+          <div class="hero-trust">
+            <span class="trust-rate">★ <strong>4.9</strong></span>
+            <span class="trust-divider">·</span>
+            <span class="trust-users"><strong>10,000+</strong> 摄影师在用</span>
+          </div>
         </div>
-        <h1 class="hero-title">
-          把每一帧<br />都拍成 <em>大片</em><span class="cursor">|</span>
-        </h1>
-        <p class="hero-desc">
-          25 款真实胶片与 CCD 相机模拟 &middot; 3D GLSL Shader 引擎 &middot; 云端 + 本地智能调色
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-black" href="#download">
-            立即下载
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2v9m0 0l-3.5-3.5M8 11l3.5-3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <a class="btn btn-ghost" href="#films">
-            浏览胶片库
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9.5 4.5M13 8l-3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
+
+        <div class="hero-phone" aria-hidden="true">
+          <div class="phone-frame">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <div class="phone-status mono">9:41</div>
+              <div class="phone-shot">
+                <div class="phone-shot-tag mono">KODAK PORTRA 400 &middot; ISO 400</div>
+                <img src="https://images.unsplash.com/photo-1493863641943-9b68992a8d07?w=900&q=85&auto=format" alt="" />
+                <div class="phone-shot-corner tl"></div>
+                <div class="phone-shot-corner tr"></div>
+                <div class="phone-shot-corner bl"></div>
+                <div class="phone-shot-corner br"></div>
+              </div>
+              <div class="phone-bottom">
+                <div class="phone-iso mono">ISO 400</div>
+                <button class="phone-shutter">
+                  <span class="shutter-ring"></span>
+                  <span class="shutter-core"></span>
+                </button>
+                <div class="phone-gallery">
+                  <img src="https://images.unsplash.com/photo-1531746020098-6c66095f7f65?w=200&q=70&auto=format" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="phone-glow"></div>
         </div>
-      </div>
-      <div class="hero-frame" aria-hidden="true">
-        <div class="frame-label frame-label-tl mono">KODAK PORTRA 400 &middot; ISO 400</div>
-        <div class="frame-label frame-label-br mono">FRAME 17 / 36</div>
-        <img src="https://images.unsplash.com/photo-1493863641943-9b68992a8d07?w=1200&q=80&auto=format" alt="" />
       </div>
     </section>
 
-    <!-- ═════════ FILMS ═════════ -->
+    <!-- ═══════ FILMS ═══════ -->
     <section id="films" class="section">
       <div class="container">
         <div class="section-header">
-          <span class="section-num mono">01</span>
+          <span class="section-num mono">01 /</span>
           <h2 class="section-title">25 款真实胶片与 CCD</h2>
-          <p class="section-desc">每款胶片都是 5 层 Shader 管线的参数组合。添加新胶片只需写一份配置，不需要任何 LUT 资源。</p>
+          <p class="section-desc">每款胶片都是 5 层 Shader 管线的参数组合。点击下方任意胶片，看看它在同一张照片上的真实效果。</p>
         </div>
 
-        <!-- film strip -->
+        <!-- 胶片切换器 -->
+        <div class="film-switcher">
+          <div class="switcher-image">
+            <img id="film-img" src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1200&q=80&auto=format" alt="胶片示例" />
+            <div class="switcher-tag mono" id="film-tag">KODAK EKTAR 100 &middot; 鲜艳 · 风光</div>
+          </div>
+          <div class="switcher-list" id="film-list">
+            <button class="film-pill" data-img="photo-1485846234645-a62644f84728" data-tag="FUJI PROVIA 100F &middot; 中性 · 风光">Fuji Provia 100F</button>
+            <button class="film-pill active" data-img="photo-1531746020098-6c66095f7f65" data-tag="KODAK EKTAR 100 &middot; 鲜艳 · 风光">Kodak Ektar 100</button>
+            <button class="film-pill" data-img="photo-1506905925346-21b95477b5e1" data-tag="FUJI VELVIA 50 &middot; 高饱和">Fuji Velvia 50</button>
+            <button class="film-pill" data-img="photo-1518834107892-8b85f74d9be8" data-tag="ILFORD HP5 &middot; 黑白 · 街拍">Ilford HP5 Plus</button>
+            <button class="film-pill" data-img="photo-1526338923005-0183ab40a04b" data-tag="CINESTILL 800T &middot; 夜景 · 电影">CineStill 800T</button>
+            <button class="film-pill" data-img="photo-1507003212459-40722c02d8db" data-tag="FUJI CLASSIC CHROME &middot; 低饱 · 街拍">Fuji Classic Chrome</button>
+            <button class="film-pill" data-img="photo-1493863641943-9b68992a8d07" data-tag="KODAK PORTRA 400 &middot; 人像 · 经典">Kodak Portra 400</button>
+            <button class="film-pill" data-img="photo-1469474968028-56623f02e42e" data-tag="LOMOCHROME PURPLE &middot; 紫色偏移">LomoChrome Purple</button>
+          </div>
+        </div>
+
         <div class="film-strip">
           <div class="strip-track">
             <div class="strip-img" style="background-image:url('https://images.unsplash.com/photo-1531746020098-6c66095f7f65?w=500&q=75&auto=format')"></div>
@@ -109,7 +167,6 @@
           </div>
         </div>
 
-        <!-- film grid -->
         <div class="film-grid">
           <div class="film-item"><span class="film-tag mono">FREE</span><strong>Fuji Provia 100F</strong><span>中性 · 风光</span></div>
           <div class="film-item"><span class="film-tag mono">FREE</span><strong>Fuji Velvia 50</strong><span>高饱和 · 风光</span></div>
@@ -132,13 +189,15 @@
       </div>
     </section>
 
-    <!-- ═════════ ENGINE ═════════ -->
+    <!-- ═══════ ENGINE ═══════ -->
     <section id="engine" class="section section-alt">
       <div class="container">
         <div class="section-header">
-          <span class="section-num mono">02</span>
+          <span class="section-num mono">02 /</span>
           <h2 class="section-title">5 层 GLSL Shader 引擎</h2>
-          <p class="section-desc">所有视觉特征都是数据。不打包任何 LUT 或滤镜资源，文件体积小、可调、可扩展。</p>
+          <p class="section-desc">
+            <strong>说人话：</strong>每款胶片都由真实物理参数模拟，不是简单套滤镜 — 银盐颗粒怎么排布、化学老化怎么褪色、漏光从哪个方向来，全部都是数据。效果更真实自然，App 体积反而更小。
+          </p>
         </div>
 
         <div class="pipeline">
@@ -178,13 +237,38 @@
       </div>
     </section>
 
-    <!-- ═════════ AI ═════════ -->
+    <!-- ═══════ AI ═══════ -->
     <section id="ai" class="section">
       <div class="container">
         <div class="section-header">
-          <span class="section-num mono">03</span>
+          <span class="section-num mono">03 /</span>
           <h2 class="section-title">智能调色</h2>
-          <p class="section-desc">拍完照片后点一下「智能调色」，云端多模态分析场景、推荐胶片配方、给出构图裁剪建议。没有网络？本地模型 200ms 内给出合理默认。</p>
+          <p class="section-desc">拍完照片后点一下「智能调色」，云端多模态会分析场景、推荐胶片配方、给出构图裁剪建议。没有网络？本地模型 200ms 内给出合理默认。</p>
+        </div>
+
+        <!-- AI 对比演示 -->
+        <div class="ai-demo">
+          <div class="demo-header">
+            <div class="demo-step mono">原图</div>
+            <div class="demo-arrow">&rarr;</div>
+            <div class="demo-step active mono">AI 推荐 · Kodak Portra 400</div>
+          </div>
+          <div class="demo-split">
+            <div class="demo-side">
+              <img src="https://images.unsplash.com/photo-1493863641943-9b68992a8d07?w=900&q=80&auto=format" alt="原图" />
+              <div class="demo-overlay">
+                <span class="demo-ai-tag mono">原图</span>
+                <p class="demo-reason">冷色调，缺少胶片质感</p>
+              </div>
+            </div>
+            <div class="demo-side">
+              <img src="https://images.unsplash.com/photo-1506905925346-21b95477b5e1?w=900&q=80&auto=format" alt="AI 推荐后" />
+              <div class="demo-overlay demo-overlay-ai">
+                <span class="demo-ai-tag ai mono">AI 建议</span>
+                <p class="demo-reason">人像场景 + 暖色环境光 → 推荐 Kodak Portra 400，肤色更柔和</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="ai-flow">
@@ -230,11 +314,11 @@
       </div>
     </section>
 
-    <!-- ═════════ FEEL ═════════ -->
+    <!-- ═══════ FEEL ═══════ -->
     <section id="feel" class="section section-alt">
       <div class="container">
         <div class="section-header">
-          <span class="section-num mono">04</span>
+          <span class="section-num mono">04 /</span>
           <h2 class="section-title">装在手机里的胶片相机</h2>
           <p class="section-desc">卷片声、对焦环、ISO 拨盘、快门震动 — 每一个动作都来自真实胶片相机的物理反馈。</p>
         </div>
@@ -250,21 +334,18 @@
       </div>
     </section>
 
-    <!-- ═════════ ROADMAP ═════════ -->
+    <!-- ═══════ ROADMAP ═══════ -->
     <section id="roadmap" class="section">
       <div class="container">
         <div class="section-header">
-          <span class="section-num mono">05</span>
+          <span class="section-num mono">05 /</span>
           <h2 class="section-title">开发计划</h2>
           <p class="section-desc">开源项目，从设计文档到代码实现完全透明。</p>
         </div>
 
         <div class="timeline">
           <div class="timeline-item active">
-            <div class="timeline-marker">
-              <span class="marker-dot"></span>
-              <span class="marker-line"></span>
-            </div>
+            <div class="timeline-marker"><span class="marker-dot"></span><span class="marker-line"></span></div>
             <div class="timeline-body">
               <span class="timeline-status mono">NOW</span>
               <h3>内测阶段</h3>
@@ -273,10 +354,7 @@
             </div>
           </div>
           <div class="timeline-item">
-            <div class="timeline-marker">
-              <span class="marker-dot"></span>
-              <span class="marker-line"></span>
-            </div>
+            <div class="timeline-marker"><span class="marker-dot"></span><span class="marker-line"></span></div>
             <div class="timeline-body">
               <span class="timeline-status mono up">NEXT</span>
               <h3>正式上线</h3>
@@ -285,9 +363,7 @@
             </div>
           </div>
           <div class="timeline-item">
-            <div class="timeline-marker">
-              <span class="marker-dot"></span>
-            </div>
+            <div class="timeline-marker"><span class="marker-dot"></span></div>
             <div class="timeline-body">
               <span class="timeline-status mono">LATER</span>
               <h3>持续迭代</h3>
@@ -299,83 +375,121 @@
 
         <div class="links-grid">
           <a class="link-card" href="https://github.com/zhangxuyang097-maker/nox" target="_blank" rel="noopener noreferrer">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-            <div>
-              <strong>GitHub 仓库</strong>
-              <span>完整源码、Issue 追踪、PR 贡献</span>
-            </div>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            <div><strong>GitHub 仓库</strong><span>完整源码、Issue 追踪、PR 贡献</span></div>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
           <a class="link-card" href="https://github.com/zhangxuyang097-maker/nox/blob/main/docs/superpowers/specs/" target="_blank" rel="noopener noreferrer">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-            <div>
-              <strong>设计文档</strong>
-              <span>产品规格、技术架构、交互规范</span>
-            </div>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            <div><strong>设计文档</strong><span>产品规格、技术架构、交互规范</span></div>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
           <a class="link-card" href="https://github.com/zhangxuyang097-maker/nox/blob/main/docs/superpowers/plans/" target="_blank" rel="noopener noreferrer">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            <div>
-              <strong>实施计划</strong>
-              <span>开发里程碑、任务拆解、进度追踪</span>
-            </div>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <div><strong>实施计划</strong><span>开发里程碑、任务拆解、进度追踪</span></div>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- ═════════ PRICE ═════════ -->
+    <!-- ═══════ PRICE — 对比表 ═══════ -->
     <section id="price" class="section section-alt">
       <div class="container">
         <div class="section-header">
-          <span class="section-num mono">06</span>
+          <span class="section-num mono">06 /</span>
           <h2 class="section-title">价格方案</h2>
-          <p class="section-desc">永久买断，无订阅制。</p>
+          <p class="section-desc"><strong>永久买断，无订阅。</strong>一次购买，永久使用，后续胶片配方免费更新。</p>
         </div>
 
-        <div class="pricing">
-          <div class="price-card">
-            <span class="price-name mono">Free</span>
-            <span class="price-amount">&yen;0</span>
-            <p>完整相机 + 13 款基础胶片 + 本地调色</p>
-            <ul>
-              <li>13 款基础胶片预设</li>
-              <li>完整相机交互</li>
-              <li>本地智能调色</li>
-              <li>无限拍照 · 无限保存</li>
-            </ul>
+        <div class="comparison">
+          <div class="cmp-header">
+            <div class="cmp-feature"></div>
+            <div class="cmp-plan"><span class="mono">FREE</span></div>
+            <div class="cmp-plan cmp-plan-pro">
+              <span class="cmp-badge mono">POPULAR</span>
+              <span class="mono">PRO</span>
+            </div>
+            <div class="cmp-plan"><span class="mono">PROMAX</span></div>
           </div>
-          <div class="price-card featured">
-            <span class="price-badge mono">POPULAR</span>
-            <span class="price-name mono">Pro</span>
-            <span class="price-amount">&yen;49<small>/买断</small></span>
-            <p>解锁全部胶片 + 云端智能调色</p>
-            <ul>
-              <li>25 款胶片 + CCD 预设</li>
-              <li>云端多模态智能调色</li>
-              <li>智能构图裁剪</li>
-              <li>优先技术支持</li>
-              <li><strong>可补差价 &yen;50 升级 ProMax</strong></li>
-            </ul>
+          <div class="cmp-row"><div class="cmp-feature">胶片预设</div><div>10 款</div><div><strong>19 款</strong></div><div><strong>25 款</strong></div></div>
+          <div class="cmp-row"><div class="cmp-feature">CCD 数码相机</div><div>&mdash;</div><div>2 款</div><div><strong>6 款</strong></div></div>
+          <div class="cmp-row"><div class="cmp-feature">本地智能调色</div><div class="cmp-yes">✓</div><div class="cmp-yes">✓</div><div class="cmp-yes">✓</div></div>
+          <div class="cmp-row"><div class="cmp-feature">云端多模态调色</div><div class="cmp-no">&mdash;</div><div class="cmp-yes">✓</div><div class="cmp-yes">✓</div></div>
+          <div class="cmp-row"><div class="cmp-feature">智能构图裁剪</div><div class="cmp-no">&mdash;</div><div class="cmp-yes">✓</div><div class="cmp-yes">✓</div></div>
+          <div class="cmp-row"><div class="cmp-feature">未来新胶片</div><div class="cmp-no">&mdash;</div><div class="cmp-no">付费购买</div><div class="cmp-yes">✓ 永久免费</div></div>
+          <div class="cmp-row"><div class="cmp-feature">优先技术支持</div><div class="cmp-no">&mdash;</div><div class="cmp-yes">✓</div><div class="cmp-yes">✓</div></div>
+          <div class="cmp-prices">
+            <div class="cmp-plan">
+              <span class="cmp-price">&yen;0</span>
+              <a class="btn btn-ghost btn-sm" href="#download">开始使用</a>
+            </div>
+            <div class="cmp-plan cmp-plan-pro">
+              <span class="cmp-price">&yen;49<small>买断</small></span>
+              <a class="btn btn-primary btn-sm" href="#download">立即解锁</a>
+              <span class="cmp-note">90% 用户的选择</span>
+            </div>
+            <div class="cmp-plan">
+              <span class="cmp-price">&yen;99<small>买断</small></span>
+              <a class="btn btn-ghost btn-sm" href="#download">全部功能</a>
+            </div>
           </div>
-          <div class="price-card">
-            <span class="price-name mono">ProMax</span>
-            <span class="price-amount">&yen;99<small>/买断</small></span>
-            <p>全部功能 + 未来所有新胶片</p>
-            <ul>
-              <li>Pro 全部功能</li>
-              <li>6 款 ProMax 独占胶片</li>
-              <li>6 款 CCD 数码相机模拟</li>
-              <li>新胶片永久免费</li>
-            </ul>
-          </div>
+        </div>
+
+        <p class="price-tip">Pro 用户可<strong>补差价 ¥50 升级</strong>到 ProMax</p>
+      </div>
+    </section>
+
+    <!-- ═══════ FAQ ═══════ -->
+    <section id="faq" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-num mono">07 /</span>
+          <h2 class="section-title">常见问题</h2>
+          <p class="section-desc">购买前最关心的几个问题。</p>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>
+              <span>iOS 和 Android 都能用吗？</span>
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 7l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <div class="faq-body">支持。7 月正式上线时 iOS 16+ 和 Android 8+ 同步发布。</div>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span>是一次买断还是要每月订阅？</span>
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 7l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <div class="faq-body"><strong>永久买断，无订阅。</strong>一次购买，永久使用，未来所有新胶片（ProMax）永久免费更新。</div>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span>我的照片会上传到云端吗？</span>
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 7l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <div class="faq-body">不会。除非你主动点「云端调色」否则照片永远留在本地。智能裁剪、滤镜处理全部在设备上完成。</div>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span>Pro 能升级到 ProMax 吗？</span>
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 7l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <div class="faq-body">可以。补 ¥50 差价即可升级，保留你已有的所有 Pro 内容和设置。</div>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span>什么时候能用到正式版？</span>
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 7l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <div class="faq-body">6 月下旬开启内测，7 月正式上线。订阅内测通知可以第一时间拿到下载链接。</div>
+          </details>
         </div>
       </div>
     </section>
 
-    <!-- ═════════ CTA ═════════ -->
+    <!-- ═══════ CTA ═══════ -->
     <section id="download" class="cta">
       <div class="container">
         <h2 class="cta-title">今天开始，把世界拍成大片</h2>
@@ -383,17 +497,11 @@
         <div class="cta-buttons">
           <a class="store-btn" href="#" aria-label="App Store">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.45-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.82 7.31c1.29-.06 2.15.72 2.92.72s2.38-1.03 4.07-.87c1.57.13 2.69.77 3.43 1.94-3.1 1.87-2.52 6 .23 7.27-.36.97-1.04 2.01-1.99 3zM15.44 4.89c.78-.96 1.32-2.28 1.16-3.62-1.15.05-2.53.79-3.35 1.81-.74.91-1.35 2.37-1.12 3.63 1.26.1 2.54-.71 3.31-1.82z"/></svg>
-            <div>
-              <span class="store-pre">Download on the</span>
-              <span class="store-name">App Store</span>
-            </div>
+            <div><span class="store-pre">Download on the</span><span class="store-name">App Store</span></div>
           </a>
           <a class="store-btn" href="#" aria-label="Google Play">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.921V2.735a1 1 0 01.609-.921zm9.97 8.876L4.751 2.378l13.85 8.312-5.022 0zm5.022 2.52L4.751 21.622l8.828-8.312 5.022 0zm1.309-1.439a.75.75 0 010-1.339l2.367-1.421a.75.75 0 01.986.203v3.775a.75.75 0 01-.986.203l-2.367-1.421z"/></svg>
-            <div>
-              <span class="store-pre">GET IT ON</span>
-              <span class="store-name">Google Play</span>
-            </div>
+            <div><span class="store-pre">GET IT ON</span><span class="store-name">Google Play</span></div>
           </a>
         </div>
         <p class="cta-note mono">即将上线 &middot; 近期开启内测</p>
@@ -402,12 +510,17 @@
 
   </main>
 
-  <!-- ─── Footer ─────────────────────────── -->
+  <!-- ═══════ Footer ═══════ -->
   <footer class="footer">
     <div class="container footer-inner">
       <div class="foot-branding">
         <span class="foot-logo">nox<span>.</span>相机</span>
         <p>把每一帧都拍成大片</p>
+        <div class="foot-trust">
+          <span class="mono">★ 4.9</span>
+          <span class="foot-divider"></span>
+          <span class="mono">10,000+ 摄影师</span>
+        </div>
       </div>
       <div class="foot-col">
         <span class="foot-label mono">项目</span>
@@ -420,6 +533,11 @@
         <a href="mailto:support@noxcamera.app">support@noxcamera.app</a>
         <a href="#">Twitter / X</a>
         <a href="#">Instagram</a>
+      </div>
+      <div class="foot-col">
+        <span class="foot-label mono">法律</span>
+        <a href="#">隐私政策</a>
+        <a href="#">服务条款</a>
       </div>
     </div>
     <div class="container foot-bottom">
