@@ -56,11 +56,11 @@
         pill.classList.add('active');
 
         // crossfade image
-        const photoId = pill.dataset.img;
-        if (photoId) {
+        const imgPath = pill.dataset.img;
+        if (imgPath) {
           filmImg.style.opacity = '0';
           setTimeout(() => {
-            filmImg.src = `https://images.unsplash.com/photo-${photoId}?w=1200&q=80&auto=format`;
+            filmImg.src = imgPath;
             filmImg.style.opacity = '1';
           }, 180);
         }
