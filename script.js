@@ -46,24 +46,25 @@
   const filmImg = document.getElementById('film-img');
   const filmTag = document.getElementById('film-tag');
   if (filmPills.length && filmImg && filmTag) {
+    // default filter for active pill
+    const defaultFilter = 'saturate(1.3) contrast(1.15) brightness(1.03) sepia(0.08)';
+    filmImg.style.filter = defaultFilter;
+    filmImg.style.transition = 'filter .35s ease, opacity .25s ease';
+
     filmPills.forEach(pill => {
       pill.addEventListener('click', () => {
-        // skip if already active
         if (pill.classList.contains('active')) return;
 
-        // update active state
         filmPills.forEach(p => p.classList.remove('active'));
         pill.classList.add('active');
 
-        // crossfade image
-        const imgPath = pill.dataset.img;
-        if (imgPath) {
-          filmImg.style.opacity = '0';
-          setTimeout(() => {
-            filmImg.src = imgPath;
-            filmImg.style.opacity = '1';
-          }, 180);
-        }
+        // apply CSS filter
+        const filterVal = pill.dataset.filter || '';
+        filmImg.style.opacity = '0';
+        setTimeout(() => {
+          filmImg.style.filter = filterVal;
+          filmImg.style.opacity = '1';
+        }, 180);
 
         // update tag
         const tag = pill.dataset.tag;
@@ -76,8 +77,6 @@
         }
       });
     });
-    // ensure transition is set
-    filmImg.style.transition = 'opacity .25s ease';
     filmTag.style.transition = 'opacity .25s ease';
   }
 
